@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Жести DTW</string>
+
+    <string name="btn_start">Старт</string>
+    <string name="btn_stop">Стоп</string>
+    <string name="btn_detect">Визначити</string>
+
+    <string name="status_idle">Стан: очікування</string>
+    <string name="status_recording">Стан: запис…</string>
+
+    <string name="samples_0">Семплів: 0</string>
+    <string name="samples_fmt">Семплів: %1$d</string>
+
+    <string name="result_none">Результат: —</string>
+    <string name="result_fmt">Результат: %1$s</string>
+    <string name="result_unknown">Невідомо</string>
+
+    <string name="gesture_shake">Струс</string>
+    <string name="gesture_left_right">Вліво–вправо</string>
+    <string name="gesture_up_down">Вгору–вниз</string>
+    <string name="gesture_forward_back">Вперед–назад</string>
+
+    <string name="error_no_accelerometer">Акселерометр не знайдено.</string>
+</resources>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tariff>
+    <operators>
+        <operator id="opVodafone">
+            <name>Vodafone</name>
+        </operator>
+        <operator id="opKyivstar">
+            <name>Kyivstar</name>
+        </operator>
+    </operators>
+
+    <plans>
+        <plan id="planRedStart" operatorRef="opVodafone">
+            <name>Red Start</name>
+            <payroll>150.00</payroll>
+            <callPrices>
+                <callPrice kind="IN_NETWORK">0.00</callPrice>
+                <callPrice kind="OUT_NETWORK">1.50</callPrice>
+                <callPrice kind="LANDLINE">2.00</callPrice>
+            </callPrices>
+            <smsPrice>0.50</smsPrice>
+            <parameters>
+                <favoriteNumbers>2</favoriteNumbers>
+                <billing>PER_MINUTE</billing>
+                <connectionFee>30.00</connectionFee>
+            </parameters>
+        </plan>
+
+        <plan id="planRedMax" operatorRef="opVodafone">
+            <name>Red Max</name>
+            <payroll>250.00</payroll>
+            <callPrices>
+                <callPrice kind="IN_NETWORK">0.00</callPrice>
+                <callPrice kind="OUT_NETWORK">1.00</callPrice>
+                <callPrice kind="LANDLINE">1.50</callPrice>
+            </callPrices>
+            <smsPrice>0.25</smsPrice>
+            <parameters>
+                <favoriteNumbers>5</favoriteNumbers>
+                <billing>PER_12_SECONDS</billing>
+                <connectionFee>0.00</connectionFee>
+            </parameters>
+        </plan>
+
+        <plan id="planLoveUA" operatorRef="opKyivstar">
+            <name>Love UA</name>
+            <payroll>125.00</payroll>
+            <callPrices>
+                <callPrice kind="IN_NETWORK">0.00</callPrice>
+                <callPrice kind="OUT_NETWORK">2.00</callPrice>
+                <callPrice kind="LANDLINE">2.50</callPrice>
+            </callPrices>
+            <smsPrice>0.60</smsPrice>
+            <parameters>
+                <billing>PER_MINUTE</billing>
+            </parameters>
+        </plan>
+
+        <plan id="planBasic" operatorRef="opKyivstar">
+            <name>Basic</name>
+            <callPrices>
+                <callPrice kind="IN_NETWORK">0.00</callPrice>
+                <callPrice kind="OUT_NETWORK">3.00</callPrice>
+                <callPrice kind="LANDLINE">3.50</callPrice>
+            </callPrices>
+            <parameters>
+                <billing>PER_MINUTE</billing>
+                <connectionFee>10.00</connectionFee>
+            </parameters>
+        </plan>
+    </plans>
+</Tariff>

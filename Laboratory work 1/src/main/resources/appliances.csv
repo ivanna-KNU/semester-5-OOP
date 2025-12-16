@@ -1,0 +1,12 @@
+# type,id,name,powerWatts,attr1,attr2
+# kettle: attr1=capacityLiters
+Kettle,K1,Electric Kettle,2000,1.7,
+# fridge: attr1=volumeLiters attr2=hasFreezer
+Fridge,F1,Fridge Samsung,180,320,true
+# lamp: attr1=brightnessLumens
+Lamp,L1,Desk Lamp,12,800,
+Lamp,L2,Floor Lamp,20,1200,
+# washingMachine: attr1=drumKg attr2=hasDryer
+WashingMachine,W1,Washing Machine LG,2000,7.0,false
+WashingMachine,W2,Washing Machine Bosch,2300,8.0,true
+

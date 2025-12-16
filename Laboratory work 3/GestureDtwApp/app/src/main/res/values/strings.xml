@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Gesture DTW</string>
+
+    <string name="btn_start">Start</string>
+    <string name="btn_stop">Stop</string>
+    <string name="btn_detect">Detect</string>
+
+    <string name="status_idle">Status: idle</string>
+    <string name="status_recording">Status: recording…</string>
+
+    <string name="samples_0">Samples: 0</string>
+    <string name="samples_fmt">Samples: %1$d</string>
+
+    <string name="result_none">Result: —</string>
+    <string name="result_fmt">Result: %1$s</string>
+    <string name="result_unknown">Unknown</string>
+
+    <string name="gesture_shake">Shake</string>
+    <string name="gesture_left_right">Left–Right</string>
+    <string name="gesture_up_down">Up–Down</string>
+    <string name="gesture_forward_back">Forward–Back</string>
+
+    <string name="error_no_accelerometer">No accelerometer sensor found.</string>
+</resources>

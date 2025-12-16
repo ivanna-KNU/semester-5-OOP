@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:simpleType name="moneyType">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0"/>
+            <xs:fractionDigits value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="nonNegativeInt">
+        <xs:restriction base="xs:nonNegativeInteger"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="callKindType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="IN_NETWORK"/>
+            <xs:enumeration value="OUT_NETWORK"/>
+            <xs:enumeration value="LANDLINE"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="billingType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="PER_12_SECONDS"/>
+            <xs:enumeration value="PER_MINUTE"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="Tariff" type="tariffCatalogType"/>
+
+    <xs:complexType name="tariffCatalogType">
+        <xs:sequence>
+            <xs:element name="operators" type="operatorsType"/>
+            <xs:element name="plans" type="plansType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="operatorsType">
+        <xs:sequence>
+            <xs:element name="operator" type="operatorType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="operatorType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="plansType">
+        <xs:sequence>
+            <xs:element name="plan" type="planType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="planType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="payroll" type="moneyType" minOccurs="0"/>
+            <xs:element name="callPrices" type="callPricesType"/>
+            <xs:element name="smsPrice" type="moneyType" minOccurs="0"/>
+            <xs:element name="parameters" type="parametersType"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+        <xs:attribute name="operatorRef" type="xs:IDREF" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="callPricesType">
+        <xs:sequence>
+            <xs:element name="callPrice" type="callPriceType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="callPriceType">
+        <xs:simpleContent>
+            <xs:extension base="moneyType">
+                <xs:attribute name="kind" type="callKindType" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="parametersType">
+        <xs:sequence>
+            <xs:element name="favoriteNumbers" type="nonNegativeInt" minOccurs="0"/>
+            <xs:element name="billing" type="billingType"/>
+            <xs:element name="connectionFee" type="moneyType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

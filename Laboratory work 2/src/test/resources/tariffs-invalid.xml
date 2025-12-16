@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tariff>
+    <operators>
+        <operator id="opVodafone">
+            <name>Vodafone</name>
+        </operator>
+    </operators>
+
+    <plans>
+        <!-- invalid: operatorRef points to missing xs:ID and payroll is negative -->
+        <plan id="planInvalid" operatorRef="opMissing">
+            <name>Invalid</name>
+            <payroll>-1.00</payroll>
+            <callPrices>
+                <callPrice kind="IN_NETWORK">0.00</callPrice>
+            </callPrices>
+            <parameters>
+                <billing>PER_MINUTE</billing>
+            </parameters>
+        </plan>
+    </plans>
+</Tariff>
