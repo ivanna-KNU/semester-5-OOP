@@ -25,7 +25,7 @@ public final class LoggerConfig {
                 LogcatHandler handler = new LogcatHandler();
                 handler.setLevel(Level.ALL);
                 root.addHandler(handler);
-                root.setLevel(BuildConfig.DEBUG ? Level.FINE : Level.INFO);
+                root.setLevel(BuildConfig.DEBUG);
             }
 
             initialized = true;
